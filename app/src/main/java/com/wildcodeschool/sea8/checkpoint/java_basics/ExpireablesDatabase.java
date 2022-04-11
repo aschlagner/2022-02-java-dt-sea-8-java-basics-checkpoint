@@ -24,12 +24,22 @@ public class ExpireablesDatabase<E extends IExpireable> {
         Comparator<E> comparator = new Comparator<E>() {
             @Override
             public int compare(E o1, E o2) {
-                if (o1.expiryDate().isBefore(o2.expiryDate())) {
-                    return 1;
-                } else if (o1.expiryDate().isAfter(o2.expiryDate())) {
-                    return -1;
+                if (descending == true) {
+                    if (o1.expiryDate().isBefore(o2.expiryDate())) {
+                        return 1;
+                    } else if (o1.expiryDate().isAfter(o2.expiryDate())) {
+                        return -1;
+                    } else {
+                    return 0;
+                    }
                 } else {
-                return 0;
+                    if (o1.expiryDate().isBefore(o2.expiryDate())) {
+                        return -1;
+                    } else if (o1.expiryDate().isAfter(o2.expiryDate())) {
+                        return 1;
+                    } else {
+                    return 0;
+                    }
                 }
             }
         };
