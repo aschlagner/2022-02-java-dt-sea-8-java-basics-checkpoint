@@ -1,6 +1,8 @@
 package com.wildcodeschool.sea8.checkpoint.java_basics;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class ExpireablesDatabase<E extends IExpireable> {
@@ -19,9 +21,19 @@ public class ExpireablesDatabase<E extends IExpireable> {
     }
 
     public void sortByExpirationDate(boolean descending) {
-        // TODO: sort the list by the expiration date of it's entries
-        // hint: use a comparator and expiryDate()
-        
+        Comparator<E> comparator = new Comparator<E>() {
+            @Override
+            public int compare(E o1, E o2) {
+                if (o1.expiryDate().isBefore(o2.expiryDate())) {
+                    return 1;
+                } else if (o1.expiryDate().isAfter(o2.expiryDate())) {
+                    return -1;
+                } else {
+                return 0;
+                }
+            }
+        };
+        Collections.sort(listOfExpireables, comparator);
     }
 
     public E getFirstEntry() {
