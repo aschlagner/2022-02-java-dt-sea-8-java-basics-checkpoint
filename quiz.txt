@@ -1,65 +1,65 @@
 Q: What is the difference between the branch names "main" and "master"?
-A:
+A: No difference, except that master is an obsolete term for main because of discrimination.
 
 Q: How do you checkout into the working tree of branch "main"?
-A:
+A: git checkout main
 
 Q: What is the command that allows you to temporarily store away your current, uncommited changes in order to restore them later?
-A:
+A: git stash
 
 Q: How do you list the commit history?
-A:
+A: git log
 
 Q: What is the difference between "git pull" and "git fetch"?
-A:
+A: git pull gets changes from remote and processes/merge them in one. git fetch gets them from remote only.
 
 Q: What is the return type of the expression (true && false)?
-A:
+A: false
 
 Q: How can you write "i = i + 2" more concisely?
-A:
+A: i+=2
 
 Q: How do you split a string on each occurence of ","?
-A:
+A: string.split(",")
 
 Q: How do you compare a String the proper way? How do you ignore the casing of the words?
-A:
+A: string1.equalsIgnoreCase(string2)
 
 Q: Name an implementation of the "List" interface. Is a list ordered, is it sorted?
-A:
+A: e.g. ArrayList. List is ordered, not sorted.
 
 Q: Name an implementation of the "Set" interface. Is a list ordered, is it sorted?
-A:
+A: e.g. HashSet. A List is orderd, not sorted. (A Set is not ordered and not sorted.)
 
 Q: We have an array "humans", what is the correct way of retrieving it's size?
-A:
+A: humans.length
 
 Q: For a list "humans", we try to access it's size with "int size = humans.size;". Is that correct?
-A:
+A: No, the brackets are missing: int size = humans.size();
 
 Q: How can we catch exceptions and prevent them from crashing our program?
-A:
+A: There are several possibilities: Catch with try/catch or with throws in the block declaration. 
 
 Q: How can you quickly load all lines from a file "quiz.txt" using a class from "java.nio"?
-A:
+A: File f = new File("quiz.txt"); List<String> lines = Files.readAllLines(f.toPath());  // (without looking at exceptions)
 
 Q: We have a class "Apple" that has an attribute "price" and also contains a "DEFAULT_PRICE" for all new apples. Which of them is static and why?
-A:
+A: A new instance of apple with instanceOfApple.price() is not static. Whereas Apple.DEFAULT_PRICE is static, because by convention you specify fixed values in capital letters.
 
 Q: What is the full declaration of the "main" method of a class?
-A:
+A: public static void main(String[] args) { // one or more methods }
 
 Q: What is an object?
-A:
+A: A instance or reference. Objects are variables and methods. 
 
 Q: Which naming rule should you apply to the naming of methods?
-A:
+A: CamelCase spelling with lower case initial letter. Unless it is a constructor method. Then the notation is identical to the CamelCase spelling of the class, which begins with a capital letter.
 
 Q: Does java.util.Date only describe the date?
-A:
+A: Not a date in dd/mm/yyy or so. The current Date class represents a specific point in time in milliseconds.
 
 Q: How can you store the local time (no time zone info)?
-A:
+A: LocalTime now = LocalTime.now();
 
 Q: Name at least one example of a generic interface from the standard library.
-A:
+A: java.lang.Comparable<T>

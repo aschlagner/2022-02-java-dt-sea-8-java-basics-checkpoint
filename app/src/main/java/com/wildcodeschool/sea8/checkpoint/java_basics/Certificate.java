@@ -27,14 +27,12 @@ public class Certificate implements IExpireable {
 
     @Override
     public boolean isExpired() {
-        // TODO: Provide the neccessary check here
-        return false;
+        return LocalDate.now().plusDays(60).isAfter(this.validTo);
     }
 
     @Override
     public LocalDate expiryDate() {
-        // TODO: Return the expiration date
-        return null;
+        return LocalDate.now().plusDays(60);
     }
 
     @Override
