@@ -18,14 +18,15 @@ public class DairyProduct implements IExpireable {
 
     @Override
     public boolean isExpired() {
-        // TODO: Provide the neccessary check here
-        return false;
+        LocalDate now = LocalDate.now();
+        LocalDate spoiledDate = this.dateProduced.plusDays(14);
+        return (this.dateProduced.isAfter(spoiledDate) || spoiledDate.isBefore(now));
     }
 
     @Override
     public LocalDate expiryDate() {
-        // TODO: Return the expiration date
-        return null;
+        //return this.dateProduced.plusDays(14);
+        return this.dateProduced.plusDays(this.daysUntilSpoiled);
     }
 
     @Override
