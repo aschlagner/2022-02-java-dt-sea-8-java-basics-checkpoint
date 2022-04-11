@@ -7,26 +7,29 @@ public class ExpireablesDatabase<E extends IExpireable> {
     private List<E> listOfExpireables = new ArrayList<>();
 
     public void addItem(E item) {
-        // TODO: add a new item to the list
+        listOfExpireables.add(item);
     }
 
     public void removeExpired() {
-        // TODO: implement the neccessary function to delete all expired entries from the list
+        for (E item : listOfExpireables) {
+            if (item.isExpired()) {
+                listOfExpireables.remove(item);
+            }
+        }
     }
 
     public void sortByExpirationDate(boolean descending) {
         // TODO: sort the list by the expiration date of it's entries
         // hint: use a comparator and expiryDate()
+        
     }
 
     public E getFirstEntry() {
-        // TODO: Return first item in the list
-        return null;
+        return listOfExpireables.get(0);
     }
 
     public E getLastEntry() {
-        // TODO: Return last item in the list
-        return null;
+        return listOfExpireables.get(listOfExpireables.size()-1);
     }
 
     public List<E> getList() {

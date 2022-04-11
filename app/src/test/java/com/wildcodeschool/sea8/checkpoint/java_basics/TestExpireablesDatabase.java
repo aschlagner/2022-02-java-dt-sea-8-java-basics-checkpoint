@@ -24,15 +24,15 @@ public class TestExpireablesDatabase {
         DairyProduct d = new DairyProduct(14);
         database.addItem(d);
 
-        assertEquals(c, database.getFirstEntry(), String.format("%s should be the first item in the list.", c));
-        assertEquals(d, database.getLastEntry(), String.format("%s should be the last item in the list.", c));
+        assertEquals(c, database.getFirstEntry(), String.format("1a) %s should be the first item in the list.", c));
+        assertEquals(d, database.getLastEntry(), String.format("1b) %s should be the last item in the list.", c));
 
-        assertTrue(database.getList().contains(expiredItem), "Expired item should be in the list before removing.");
+        assertTrue(database.getList().contains(expiredItem), "2a) Expired item should be in the list before removing.");
         database.removeExpired();
-        assertFalse(database.getList().contains(expiredItem), "Expired item should not be in the list after removing.");
+        assertFalse(database.getList().contains(expiredItem), "2b) Expired item should not be in the list after removing.");
 
         database.sortByExpirationDate(true);
         assertEquals(fourDays, database.getLastEntry(),
-                String.format("%s should be the last item in the list after sorting.", fourDays));
+                String.format("3) %s should be the last item in the list after sorting.", fourDays));
     }
 }
