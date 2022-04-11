@@ -44,7 +44,7 @@ Q: How can you quickly load all lines from a file "quiz.txt" using a class from 
 A: File f = new File("quiz.txt"); List<String> lines = Files.readAllLines(f.toPath());  // (without looking at exceptions)
 
 Q: We have a class "Apple" that has an attribute "price" and also contains a "DEFAULT_PRICE" for all new apples. Which of them is static and why?
-A: A new instance of apple with instanceOfApple.price() is not static. Whereas Apple.DEFAULT_PRICE is static, because by convention you specify fixed values in capital letters.
+A: A new instance of apple with instanceOfApple.price() is not static. Whereas Apple.DEFAULT_PRICE is static, because by convention you specify fixed values in capital letters.  ?
 
 Q: What is the full declaration of the "main" method of a class?
 A: public static void main(String[] args) { // one or more methods }
@@ -62,4 +62,4 @@ Q: How can you store the local time (no time zone info)?
 A: LocalTime now = LocalTime.now();
 
 Q: Name at least one example of a generic interface from the standard library.
-A: java.lang.Comparable<T>
+A: java.lang.Comparable<T>  ?
